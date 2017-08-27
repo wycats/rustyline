@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Cmd` enum in crate `rustyline`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Cmd">
+
+    <title>rustyline::Cmd - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc enum">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Enum Cmd</p><div class="block items"><ul><li><a href="#variants">Variants</a></li><li><a href="#methods">Methods</a></li><li><a href="#implementations">Trait Implementations</a></li></ul></div><p class='location'><a href='index.html'>rustyline</a></p><script>window.sidebarCurrent = {name: 'Cmd', ty: 'enum', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Enum <a href='index.html'>rustyline</a>::<wbr><a class="enum" href=''>Cmd</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../src/rustyline/keymap.rs.html#15-47' title='goto source code'>[src]</a></span></h1>
+<pre class='rust enum'>pub enum Cmd {
+    Abort,
+    AcceptLine,
+    BeginningOfHistory,
+    CapitalizeWord,
+    ClearScreen,
+    Complete,
+    DowncaseWord,
+    EndOfFile,
+    EndOfHistory,
+    ForwardSearchHistory,
+    HistorySearchBackward,
+    HistorySearchForward,
+    Insert(<a class="type" href="../rustyline/type.RepeatCount.html" title="type rustyline::RepeatCount">RepeatCount</a>,&nbsp;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>),
+    Interrupt,
+    Kill(<a class="enum" href="../rustyline/enum.Movement.html" title="enum rustyline::Movement">Movement</a>),
+    Move(<a class="enum" href="../rustyline/enum.Movement.html" title="enum rustyline::Movement">Movement</a>),
+    NextHistory,
+    Noop,
+    PreviousHistory,
+    QuotedInsert,
+    Replace(<a class="type" href="../rustyline/type.RepeatCount.html" title="type rustyline::RepeatCount">RepeatCount</a>,&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.char.html">char</a>),
+    ReverseSearchHistory,
+    SelfInsert(<a class="type" href="../rustyline/type.RepeatCount.html" title="type rustyline::RepeatCount">RepeatCount</a>,&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.char.html">char</a>),
+    Suspend,
+    TransposeChars,
+    TransposeWords(<a class="type" href="../rustyline/type.RepeatCount.html" title="type rustyline::RepeatCount">RepeatCount</a>),
+    Unknown,
+    UpcaseWord,
+    ViYankTo(<a class="enum" href="../rustyline/enum.Movement.html" title="enum rustyline::Movement">Movement</a>),
+    Yank(<a class="type" href="../rustyline/type.RepeatCount.html" title="type rustyline::RepeatCount">RepeatCount</a>,&nbsp;<a class="enum" href="../rustyline/enum.Anchor.html" title="enum rustyline::Anchor">Anchor</a>),
+    YankPop,
+}</pre><h2 id='variants' class='variants small-section-header'>
+                   Variants<a href='#variants' class='anchor'></a></h2>
+<span id='variant.Abort' class='variant'><span id='Abort.v' class='invisible'><code>Abort</code></span></span><span id='variant.AcceptLine' class='variant'><span id='AcceptLine.v' class='invisible'><code>AcceptLine</code></span></span><span id='variant.BeginningOfHistory' class='variant'><span id='BeginningOfHistory.v' class='invisible'><code>BeginningOfHistory</code></span></span><span id='variant.CapitalizeWord' class='variant'><span id='CapitalizeWord.v' class='invisible'><code>CapitalizeWord</code></span></span><span id='variant.ClearScreen' class='variant'><span id='ClearScreen.v' class='invisible'><code>ClearScreen</code></span></span><span id='variant.Complete' class='variant'><span id='Complete.v' class='invisible'><code>Complete</code></span></span><span id='variant.DowncaseWord' class='variant'><span id='DowncaseWord.v' class='invisible'><code>DowncaseWord</code></span></span><span id='variant.EndOfFile' class='variant'><span id='EndOfFile.v' class='invisible'><code>EndOfFile</code></span></span><span id='variant.EndOfHistory' class='variant'><span id='EndOfHistory.v' class='invisible'><code>EndOfHistory</code></span></span><span id='variant.ForwardSearchHistory' class='variant'><span id='ForwardSearchHistory.v' class='invisible'><code>ForwardSearchHistory</code></span></span><span id='variant.HistorySearchBackward' class='variant'><span id='HistorySearchBackward.v' class='invisible'><code>HistorySearchBackward</code></span></span><span id='variant.HistorySearchForward' class='variant'><span id='HistorySearchForward.v' class='invisible'><code>HistorySearchForward</code></span></span><span id='variant.Insert' class='variant'><span id='Insert.v' class='invisible'><code>Insert(<a class="type" href="../rustyline/type.RepeatCount.html" title="type rustyline::RepeatCount">RepeatCount</a>,&nbsp;<a class="struct" href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html" title="struct alloc::string::String">String</a>)</code></span></span><span id='variant.Interrupt' class='variant'><span id='Interrupt.v' class='invisible'><code>Interrupt</code></span></span><span id='variant.Kill' class='variant'><span id='Kill.v' class='invisible'><code>Kill(<a class="enum" href="../rustyline/enum.Movement.html" title="enum rustyline::Movement">Movement</a>)</code></span></span><span id='variant.Move' class='variant'><span id='Move.v' class='invisible'><code>Move(<a class="enum" href="../rustyline/enum.Movement.html" title="enum rustyline::Movement">Movement</a>)</code></span></span><span id='variant.NextHistory' class='variant'><span id='NextHistory.v' class='invisible'><code>NextHistory</code></span></span><span id='variant.Noop' class='variant'><span id='Noop.v' class='invisible'><code>Noop</code></span></span><span id='variant.PreviousHistory' class='variant'><span id='PreviousHistory.v' class='invisible'><code>PreviousHistory</code></span></span><span id='variant.QuotedInsert' class='variant'><span id='QuotedInsert.v' class='invisible'><code>QuotedInsert</code></span></span><span id='variant.Replace' class='variant'><span id='Replace.v' class='invisible'><code>Replace(<a class="type" href="../rustyline/type.RepeatCount.html" title="type rustyline::RepeatCount">RepeatCount</a>,&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.char.html">char</a>)</code></span></span><span id='variant.ReverseSearchHistory' class='variant'><span id='ReverseSearchHistory.v' class='invisible'><code>ReverseSearchHistory</code></span></span><span id='variant.SelfInsert' class='variant'><span id='SelfInsert.v' class='invisible'><code>SelfInsert(<a class="type" href="../rustyline/type.RepeatCount.html" title="type rustyline::RepeatCount">RepeatCount</a>,&nbsp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.char.html">char</a>)</code></span></span><span id='variant.Suspend' class='variant'><span id='Suspend.v' class='invisible'><code>Suspend</code></span></span><span id='variant.TransposeChars' class='variant'><span id='TransposeChars.v' class='invisible'><code>TransposeChars</code></span></span><span id='variant.TransposeWords' class='variant'><span id='TransposeWords.v' class='invisible'><code>TransposeWords(<a class="type" href="../rustyline/type.RepeatCount.html" title="type rustyline::RepeatCount">RepeatCount</a>)</code></span></span><span id='variant.Unknown' class='variant'><span id='Unknown.v' class='invisible'><code>Unknown</code></span></span><span id='variant.UpcaseWord' class='variant'><span id='UpcaseWord.v' class='invisible'><code>UpcaseWord</code></span></span><span id='variant.ViYankTo' class='variant'><span id='ViYankTo.v' class='invisible'><code>ViYankTo(<a class="enum" href="../rustyline/enum.Movement.html" title="enum rustyline::Movement">Movement</a>)</code></span></span><span id='variant.Yank' class='variant'><span id='Yank.v' class='invisible'><code>Yank(<a class="type" href="../rustyline/type.RepeatCount.html" title="type rustyline::RepeatCount">RepeatCount</a>,&nbsp;<a class="enum" href="../rustyline/enum.Anchor.html" title="enum rustyline::Anchor">Anchor</a>)</code></span></span><span id='variant.YankPop' class='variant'><span id='YankPop.v' class='invisible'><code>YankPop</code></span></span>
+                    <h2 id='methods' class='small-section-header'>
+                      Methods<a href='#methods' class='anchor'></a>
+                    </h2>
+                <h3 class='impl'><span class='in-band'><code>impl <a class="enum" href="../rustyline/enum.Cmd.html" title="enum rustyline::Cmd">Cmd</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/rustyline/keymap.rs.html#49-94' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.should_reset_kill_ring' class="method"><span id='should_reset_kill_ring.v' class='invisible'><code>fn <a href='#method.should_reset_kill_ring' class='fnname'>should_reset_kill_ring</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/rustyline/keymap.rs.html#50-58' title='goto source code'>[src]</a></span></h4>
+</div>
+            <h2 id='implementations' class='small-section-header'>
+              Trait Implementations<a href='#implementations' class='anchor'></a>
+            </h2>
+        <h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html" title="trait core::fmt::Debug">Debug</a> for <a class="enum" href="../rustyline/enum.Cmd.html" title="enum rustyline::Cmd">Cmd</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/rustyline/keymap.rs.html#14' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.fmt' class="method"><span id='fmt.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/fmt/trait.Debug.html#tymethod.fmt' class='fnname'>fmt</a>(&amp;self, __arg_0: &amp;mut <a class="struct" href="https://doc.rust-lang.org/nightly/core/fmt/struct.Formatter.html" title="struct core::fmt::Formatter">Formatter</a>) -&gt; <a class="type" href="https://doc.rust-lang.org/nightly/core/fmt/type.Result.html" title="type core::fmt::Result">Result</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/rustyline/keymap.rs.html#14' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Formats the value using the given formatter.</p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html" title="trait core::clone::Clone">Clone</a> for <a class="enum" href="../rustyline/enum.Cmd.html" title="enum rustyline::Cmd">Cmd</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/rustyline/keymap.rs.html#14' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.clone' class="method"><span id='clone.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone' class='fnname'>clone</a>(&amp;self) -&gt; <a class="enum" href="../rustyline/enum.Cmd.html" title="enum rustyline::Cmd">Cmd</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/rustyline/keymap.rs.html#14' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Returns a copy of the value. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#tymethod.clone">Read more</a></p>
+</div><h4 id='method.clone_from' class="method"><span id='clone_from.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from' class='fnname'>clone_from</a>(&amp;mut self, source: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;</a>Self)</code></span><span class='out-of-band'><div class='ghost'></div><div class='since' title='Stable since Rust version 1.0.0'>1.0.0</div><a class='srclink' href='https://doc.rust-lang.org/nightly/src/core/clone.rs.html#112-114' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>Performs copy-assignment from <code>source</code>. <a href="https://doc.rust-lang.org/nightly/core/clone/trait.Clone.html#method.clone_from">Read more</a></p>
+</div></div><h3 class='impl'><span class='in-band'><code>impl <a class="trait" href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html" title="trait core::cmp::PartialEq">PartialEq</a> for <a class="enum" href="../rustyline/enum.Cmd.html" title="enum rustyline::Cmd">Cmd</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/rustyline/keymap.rs.html#14' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.eq' class="method"><span id='eq.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq' class='fnname'>eq</a>(&amp;self, __arg_0: &amp;<a class="enum" href="../rustyline/enum.Cmd.html" title="enum rustyline::Cmd">Cmd</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/rustyline/keymap.rs.html#14' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>This method tests for <code>self</code> and <code>other</code> values to be equal, and is used by <code>==</code>. <a href="https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#tymethod.eq">Read more</a></p>
+</div><h4 id='method.ne' class="method"><span id='ne.v' class='invisible'><code>fn <a href='https://doc.rust-lang.org/nightly/core/cmp/trait.PartialEq.html#method.ne' class='fnname'>ne</a>(&amp;self, __arg_0: &amp;<a class="enum" href="../rustyline/enum.Cmd.html" title="enum rustyline::Cmd">Cmd</a>) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../src/rustyline/keymap.rs.html#14' title='goto source code'>[src]</a></span></h4>
+<div class='docblock'><p>This method tests for <code>!=</code>.</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "rustyline";
+    </script>
+    <script src="../main.js"></script>
+    <script defer src="../search-index.js"></script>
+</body>
+</html>
